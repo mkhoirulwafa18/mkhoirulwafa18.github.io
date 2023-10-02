@@ -4,27 +4,27 @@ import imageSprBackgroundVolcanismLarge from 'assets/spr-background-volcanism-la
 import imageSprBackgroundVolcanismPlaceholder from 'assets/spr-background-volcanism-placeholder.jpg';
 import imageSprBackgroundVolcanism from 'assets/spr-background-volcanism.jpg';
 import backgroundSpr from 'assets/spr-background.jpg';
-import imageSprComponentsDarkLarge from 'assets/spr-components-dark-large.png';
-import imageSprComponentsDarkPlaceholder from 'assets/spr-components-dark-placeholder.png';
-import imageSprComponentsDark from 'assets/spr-components-dark.png';
-import imageSprComponentsLightLarge from 'assets/spr-components-light-large.png';
-import imageSprComponentsLightPlaceholder from 'assets/spr-components-light-placeholder.png';
-import imageSprComponentsLight from 'assets/spr-components-light.png';
+import initialDesignDarkLarge from 'assets/apps/figma-initial.PNG';
+import initialDesignDarkPlaceholder from 'assets/apps/figma-initial.PNG';
+import initialDesignDark from 'assets/apps/figma-initial.PNG';
+import initialDesignLightLarge from 'assets/apps/figma-initial.PNG';
+import initialDesignLightPlaceholder from 'assets/apps/figma-initial.PNG';
+import initialDesignLight from 'assets/apps/figma-initial.PNG';
 import imageSprDesignSystemDarkLarge from 'assets/spr-design-system-dark-large.png';
 import imageSprDesignSystemDarkPlaceholder from 'assets/spr-design-system-dark-placeholder.png';
 import imageSprDesignSystemDark from 'assets/spr-design-system-dark.png';
 import imageSprDesignSystemLightLarge from 'assets/spr-design-system-light-large.png';
 import imageSprDesignSystemLightPlaceholder from 'assets/spr-design-system-light-placeholder.png';
 import imageSprDesignSystemLight from 'assets/spr-design-system-light.png';
-import imageSprLessonBuilderDarkLarge from 'assets/spr-lesson-builder-dark-large.jpg';
-import imageSprLessonBuilderDarkPlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
-import imageSprLessonBuilderDark from 'assets/spr-lesson-builder-dark.jpg';
-import imageSprLessonBuilderLightLarge from 'assets/spr-lesson-builder-light-large.jpg';
-import imageSprLessonBuilderLightPlaceholder from 'assets/spr-lesson-builder-light-placeholder.jpg';
-import imageSprLessonBuilderLight from 'assets/spr-lesson-builder-light.jpg';
-import videoSprMotionLarge from 'assets/spr-motion-large.mp4';
-import videoSprMotionPlaceholder from 'assets/spr-motion-placeholder.jpg';
-import videoSprMotion from 'assets/spr-motion.mp4';
+import imageEemanDarkLarge from 'assets/apps/eeman-show-dark.png';
+import imageEemanDarkPlaceholder from 'assets/apps/eeman-show-dark.png';
+import imageEemanDark from 'assets/apps/eeman-show-dark.png';
+import imageEemanLightLarge from 'assets/apps/eeman-show.png';
+import imageEemanLightPlaceholder from 'assets/apps/eeman-show.png';
+import imageEemanLight from 'assets/apps/eeman-show.png';
+import eemanWalkthroughLarge from 'assets/apps/eeman.mp4';
+import eemanWalkthroughPlaceholder from 'assets/apps/eeman.mp4';
+import eemanWalkthrough from 'assets/apps/eeman.mp4';
 import imageSprSchema1DarkLarge from 'assets/spr-schema-1-dark-large.png';
 import imageSprSchema1DarkPlaceholder from 'assets/spr-schema-1-dark-placeholder.png';
 import imageSprSchema1Dark from 'assets/spr-schema-1-dark.png';
@@ -66,19 +66,16 @@ import dynamic from 'next/dynamic';
 import { Fragment, useMemo } from 'react';
 import { media } from 'utils/style';
 import styles from './SmartSparrow.module.css';
+import { deviceModels } from 'components/Model/deviceModels';
 
+const Model = dynamic(() => import('components/Model').then(mod => mod.Model));
 const Earth = dynamic(() => import('./Earth').then(mod => mod.Earth));
 const EarthSection = dynamic(() => import('./Earth').then(mod => mod.EarthSection));
 
-const title = 'Designing the future of education';
+const title = 'Embrace an Islamic way of life more effectively.';
 const description =
-  'I worked as the design lead on a major iteration of Smart Sparrow’s product. We took the platform in a bold new direction, focusing on becoming the best tool for learning designers.';
-const roles = [
-  'Art Direction',
-  'UX and UI Design',
-  'Front End Development',
-  'Motion Design',
-];
+  "I built Eeman isn't just an app, it's a transformative tool tailored to enhance your connection with Islam and elevate your spiritual path. Crafted with a deep understanding of the needs of modern Muslims, Eeman stands as your steadfast companion in nurturing a fulfilling Islamic lifestyle.";
+const roles = ['UX and UI Design', 'Mobile Development', 'Maintainer'];
 
 export const SmartSparrow = () => {
   const { themeId } = useTheme();
@@ -104,7 +101,8 @@ export const SmartSparrow = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.smartsparrow.com/"
+          linkLabel="Get The App"
+          url="https://play.google.com/store/apps/details?id=com.wafastarz.eeman"
           roles={roles}
         />
         <ProjectSection padding="top">
@@ -114,16 +112,14 @@ export const SmartSparrow = () => {
               key={themeId}
               srcSet={
                 isDark
-                  ? [imageSprLessonBuilderDark, imageSprLessonBuilderDarkLarge]
-                  : [imageSprLessonBuilderLight, imageSprLessonBuilderLightLarge]
+                  ? [imageEemanDark, imageEemanDarkLarge]
+                  : [imageEemanLight, imageEemanLightLarge]
               }
               placeholder={
-                isDark
-                  ? imageSprLessonBuilderDarkPlaceholder
-                  : imageSprLessonBuilderLightPlaceholder
+                isDark ? imageEemanDarkPlaceholder : imageEemanLightPlaceholder
               }
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
-              alt="The aero lesson builder app dragging an audio component into a screen about plant cells."
+              alt="The App Showcase of Eeman with a mockup phone design."
             />
           </ProjectSectionContent>
         </ProjectSection>
@@ -131,13 +127,14 @@ export const SmartSparrow = () => {
           <ProjectTextRow>
             <ProjectSectionHeading>The problem</ProjectSectionHeading>
             <ProjectSectionText>
-              In 2017, Smart Sparrow began a project to build an entirely new platform to
-              from the ground up to serve as the most powerful tool for educators to
-              create online learning experiences. The old platform was built in Flash, and
-              there were a number of user experience problems to solve in the process of
-              moving the platform to Javascript. The primary goals for the project were
-              reducing barriers to collaboration, and making the platform both easier for
-              new users, but with plenty of room to scale for advanced users.
+              In today&rsquo;s fast-paced world, maintaining a consistent connection with
+              our faith can be challenging. With hectic schedules and constant
+              distractions, many of us struggle to find the time and resources for regular
+              Islamic practices. This void in our daily routine prompted the creation of
+              Eeman. We developed this app to bridge the gap between our busy lives and
+              our spiritual aspirations, providing a convenient and comprehensive solution
+              that empowers users to effortlessly integrate essential Islamic practices
+              into their daily routine, ensuring a more fulfilling and balanced lifestyle.
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
@@ -147,15 +144,13 @@ export const SmartSparrow = () => {
               key={themeId}
               srcSet={
                 isDark
-                  ? [imageSprComponentsDark, imageSprComponentsDarkLarge]
-                  : [imageSprComponentsLight, imageSprComponentsLightLarge]
+                  ? [initialDesignDark, initialDesignDarkLarge]
+                  : [initialDesignLight, initialDesignLightLarge]
               }
               placeholder={
-                isDark
-                  ? imageSprComponentsDarkPlaceholder
-                  : imageSprComponentsLightPlaceholder
+                isDark ? initialDesignDarkPlaceholder : initialDesignLightPlaceholder
               }
-              alt={`A set of ${themeId} themed components for the aero design system`}
+              alt={`A set of initial idea design system of the app`}
               sizes="100vw"
             />
             <ProjectTextRow>
@@ -168,13 +163,14 @@ export const SmartSparrow = () => {
               </SegmentedControl>
             </ProjectTextRow>
             <ProjectTextRow>
-              <ProjectSectionHeading>The aero design system</ProjectSectionHeading>
+              <ProjectSectionHeading>How I design the UI</ProjectSectionHeading>
               <ProjectSectionText>
-                To streamline the design process across designers and engineers for such a
-                large project, it was important to lay the foundations with a strong,
-                flexible design system that could evolve during the product’s development
-                cycle. This would inform both the aesthetics and user experience across
-                the product itself as well as the website and marketing material.
+                The above image i showed is the initial idea of mine on start building the
+                UI of Eeman through Figma. My very first idea is to make the UI as
+                appealing as i can that can build interest in users first sight. I
+                believed going this way I can attract users by the user experience, ease
+                of use and the appearance which is catchy on eye so the users does not
+                feel it bored.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -198,12 +194,18 @@ export const SmartSparrow = () => {
               sizes="100vw"
             />
             <ProjectTextRow>
-              <ProjectSectionHeading>Design system docs</ProjectSectionHeading>
+              <ProjectSectionHeading>The Process of Making</ProjectSectionHeading>
               <ProjectSectionText>
-                A design system is useless if no one knows how to use it, so we put
-                together a comprehensive documentation website to cover principles, ux,
-                accessibility, and component guidelines for designers and engineers
-                working with the system.
+                The creation of Eeman was a solo endeavor driven by my unwavering
+                commitment to addressing a pressing need. Through meticulous research and
+                dedication, I curated a comprehensive collection of daily supplications
+                and Quranic verses. Collaborating closely with Islamic scholars, I ensured
+                the authenticity and accuracy of the content. The development phase saw
+                the creation of an intuitive interface, incorporating advanced features
+                such as prayer time reminders and digital tasbeeh. Rigorous testing and
+                user feedback allowed me to refine Eeman into a polished, user-centric app
+                that reflects my dedication to excellence and the spiritual enrichment of
+                each individual user.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -223,26 +225,82 @@ export const SmartSparrow = () => {
             <ProjectSectionColumns width="full">
               <ProjectSectionContent width="full">
                 <ProjectTextRow width="s">
-                  <ProjectSectionHeading>Motion design</ProjectSectionHeading>
+                  <ProjectSectionHeading>Eeman Features</ProjectSectionHeading>
                   <ProjectSectionText>
-                    Animation was a core principle in making the authoring experience a
-                    more understandable process. Elements animate in ways that indicate
-                    the cause and effect of each interaction to improve the fluidity of
-                    the overall experience.
+                    Eeman, your ultimate Islamic companion, brings together a range of
+                    features meticulously designed to elevate your spiritual journey:
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    <b>Daily Duas</b>: Access a curated collection of daily supplications,
+                    empowering you to connect with Allah throughout your day.
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    <b>Offline Quran</b>: Immerse yourself in the wisdom of the Quran
+                    anytime, anywhere, even without an internet connection.
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    <b>Prayer Times</b>: Stay connected with your faith through accurate
+                    prayer time reminders tailored to your location.
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    <b>Digital Tasbeeh</b>: Engage in effortless dhikr and supplication
+                    with a digital tasbeeh, strengthening your spiritual bond.
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    <b>Prayer Alarm</b>: Wake up to the serene sounds of the adhan or a
+                    gentle alarm that marks the times of prayer.
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    <b>Intuitive Interface</b>: Navigate seamlessly through an easy-to-use
+                    interface that enhances your experience.
+                  </ProjectSectionText>
+                  <ProjectSectionText>
+                    Eeman combines these essential features to provide you with a
+                    comprehensive tool for a more fulfilling and balanced Islamic
+                    lifestyle. Embrace spirituality effortlessly and enrich your daily
+                    routine with Eeman.
                   </ProjectSectionText>
                 </ProjectTextRow>
               </ProjectSectionContent>
-              <Image
+              {/* <Image
                 raised
                 className={styles.video}
                 srcSet={[
-                  { src: videoSprMotion, width: 1280 },
-                  { src: videoSprMotionLarge, width: 2560 },
+                  { src: eemanWalkthrough, width: 1280 },
+                  { src: eemanWalkthroughLarge, width: 2560 },
                 ]}
-                placeholder={videoSprMotionPlaceholder}
+                placeholder={eemanWalkthroughPlaceholder}
                 alt="A learning designer building and deploying an interactive lesson on volcanism using the app."
                 sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
-              />
+              /> */}
+              <div className={styles.model} data-device="phone">
+                <Model
+                  alt="App login screen"
+                  cameraPosition={{ x: 0, y: 0, z: 11.5 }}
+                  showDelay={300}
+                  show={false}
+                  models={[
+                    {
+                      ...deviceModels.phone,
+                      position: { x: -0.6, y: 1.1, z: 0 },
+                      texture: {
+                        srcSet: [eemanWalkthrough, eemanWalkthroughLarge],
+                        placeholder: eemanWalkthroughPlaceholder,
+                        sizes: `(max-width: ${media.tablet}px) 30vw, 20vw`,
+                      },
+                    },
+                    {
+                      ...deviceModels.phone,
+                      position: { x: 0.6, y: -0.5, z: 0.3 },
+                      texture: {
+                        srcSet: [eemanWalkthrough, eemanWalkthroughLarge],
+                        placeholder: eemanWalkthroughPlaceholder,
+                        sizes: `(max-width: ${media.tablet}px) 30vw, 20vw`,
+                      },
+                    },
+                  ]}
+                />
+              </div>
             </ProjectSectionColumns>
           </ProjectSection>
         </ThemeProvider>

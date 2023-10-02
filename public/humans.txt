@@ -1,16 +1,16 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+|||   |||
+|||/| |||
+||//|\|||
+|//  \\||
 
 The humans.txt file explains the team, technology,
 and graphic assets behind this site humanstxt.org.
 
 _______________________________________________________________________________
 
-DESIGNER | デザイナー
+INSPIRATION | インスピレーション
 
-Hamish Williams
+All Credit goes to Hamish Williams.
 Hand crafted design & web development
 
 Design tools:
@@ -20,6 +20,15 @@ Blender
 
 twitter.com/hamishmw
 github.com/hamishmw
+
+_______________________________________________________________________________
+
+EDITOR | 編集者
+
+This website has been modified by M. Khoirul Wafa.
+
+twitter.com/masapaaaa
+github.com/mkhoirulwafa18
 
 _______________________________________________________________________________
 

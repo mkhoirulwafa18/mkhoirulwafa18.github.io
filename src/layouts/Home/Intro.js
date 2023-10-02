@@ -2,6 +2,8 @@ import ArrowDown from 'assets/arrow-down.svg';
 import { DecoderText } from 'components/DecoderText';
 import { Heading } from 'components/Heading';
 import { Section } from 'components/Section';
+import { Text } from 'components/Text';
+import { Button } from 'components/Button';
 import { useTheme } from 'components/ThemeProvider';
 import { tokens } from 'components/ThemeProvider/theme';
 import { Transition } from 'components/Transition';
@@ -65,22 +67,9 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
             <DisplacementSphere />
             <header className={styles.text}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
-                <DecoderText text="Hamish Williams" delay={300} />
+                <DecoderText text="Muhammad Khoirul Wafa" delay={300} />
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
-                <VisuallyHidden className={styles.label}>
-                  {`Designer + ${introLabel}`}
-                </VisuallyHidden>
-                <span aria-hidden className={styles.row}>
-                  <span
-                    className={styles.word}
-                    data-status={status}
-                    style={cssProps({ delay: tokens.base.durationXS })}
-                  >
-                    Designer
-                  </span>
-                  <span className={styles.line} data-status={status} />
-                </span>
                 <div className={styles.row} component="span">
                   <AnimatePresence>
                     {disciplines.map(item => (
@@ -94,7 +83,7 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                           <span
                             aria-hidden
                             className={styles.word}
-                            data-plus={true}
+                            // data-plus={true}
                             data-status={status}
                             style={cssProps({ delay: tokens.base.durationL })}
                           >
@@ -105,7 +94,39 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                     ))}
                   </AnimatePresence>
                 </div>
+                <VisuallyHidden className={styles.label}>
+                  {`Developer + ${introLabel}`}
+                </VisuallyHidden>
+                <span aria-hidden className={styles.row}>
+                  <span
+                    className={styles.word}
+                    data-status={status}
+                    data-plus={true}
+                    style={cssProps({ delay: tokens.base.durationXS })}
+                  >
+                    Developer
+                  </span>
+                  <span className={styles.line} data-status={status} />
+                </span>
               </Heading>
+              <Text className={styles.description} data-visible={true} size="s" as="p">
+                &quot;Code is like humor. When you have to explain it, it’s bad.&quot; -
+                Cory House
+              </Text>
+              <div aria-hidden className={styles.index}>
+                <Button iconHoverShift href={'contact'} iconEnd="arrowRight">
+                  Hire Me
+                </Button>
+                <Button
+                  secondary
+                  className={styles.button}
+                  data-visible={visible}
+                  href="https://drive.google.com/file/d/1s_WQ_HF1mmFRs32xC5-YKHXS2Gve8zhz/view?usp=sharing"
+                  icon="send"
+                >
+                  Get My CV
+                </Button>
+              </div>
             </header>
             <RouterLink href="/#project-1">
               <a

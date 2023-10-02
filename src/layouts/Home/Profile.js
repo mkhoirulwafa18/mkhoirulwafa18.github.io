@@ -21,16 +21,27 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Hamish, currently I live in Sydney working as a senior product designer at{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
-      animations, and icon illustration. Being comfortable with code allows me to rapidly
-      prototype and validate experiences. If you’re interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
+      Welcome to my world of code and creativity! 🚀
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and{' '}
-      <Link href="/projects/volkihar-knight">make mods</Link>. I’m always down for hearing
-      about new projects, so feel free to drop me a line.
+      I’m a passionate Fullstack Mobile Developer with a focus on mobile development
+      mainly using
+      <Link href="https://flutter.dev"> Flutter</Link> and{' '}
+      <Link href="https://reactnative.dev">React Native</Link>. With a keen eye for
+      detail, I craft seamless and elegant mobile experiences that captivate users. ✨
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      My journey began at <Link href="https://camp.pijarmahir.id/"> Arkademy</Link> (now
+      known as <Link href="https://camp.pijarmahir.id/"> PijarCamp</Link>), where I honed
+      my skills and graduated as a versatile programmer adept at both Android and iOS
+      platforms. 🎓 While my heart lies in mobile development, I’ve also dabbled in web
+      development, and 3D Modelling, expanding my horizons and embracing the art of
+      building immersive digital spaces. 🌐
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      My love for problem-solving and innovation drives me to continuously explore and
+      learn. 💡 Join me on this exhilarating journey as we shape the future of technology,
+      one pixel at a time. Let’s build extraordinary applications together! 🙌
     </Text>
   </Fragment>
 );
