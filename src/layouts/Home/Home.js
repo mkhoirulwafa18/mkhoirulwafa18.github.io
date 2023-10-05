@@ -10,15 +10,18 @@ import zwalletTexture2 from 'assets/apps/zwallet-home.png';
 import zwalletTextureLarge from 'assets/apps/zwallet-topup-large.png';
 import zwalletTexturePlaceholder from 'assets/apps/zwallet-topup-placeholder.png';
 import zwalletTexture from 'assets/apps/zwallet-topup.png';
-import modalrakyatTexture2Large from 'assets/apps/modalrakyat-statistic-large.png';
-import modalrakyatTexture2Placeholder from 'assets/apps/modalrakyat-statistic-placeholder.png';
-import modalrakyatTexture2 from 'assets/apps/modalrakyat-statistic.png';
-import modalrakyatTextureLarge from 'assets/apps/modalrakyat-marketplace-large.png';
-import modalrakyatTexturePlaceholder from 'assets/apps/modalrakyat-marketplace-placeholder.png';
-import modalrakyatTexture from 'assets/apps/modalrakyat-marketplace.png';
-import sliceTextureLarge from 'assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
-import sliceTexture from 'assets/slice-app.jpg';
+import expenseTexture2Large from 'assets/apps/expense-home.png';
+import expenseTexture2Placeholder from 'assets/apps/expense-home.png';
+import expenseTexture2 from 'assets/apps/expense-home.png';
+import expenseTextureLarge from 'assets/apps/expense-statistic.png';
+import expenseTexturePlaceholder from 'assets/apps/expense-statistic.png';
+import expenseTexture from 'assets/apps/expense-statistic.png';
+import modalrakyatTexture2Large from 'assets/apps/modalrakyat-home.png';
+import modalrakyatTexture2Placeholder from 'assets/apps/modalrakyat-home.png';
+import modalrakyatTexture2 from 'assets/apps/modalrakyat-home.png';
+import modalrakyatTextureLarge from 'assets/apps/modalrakyat-statistic.png';
+import modalrakyatTexturePlaceholder from 'assets/apps/modalrakyat-statistic.png';
+import modalrakyatTexture from 'assets/apps/modalrakyat-statistic.png';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -79,8 +82,7 @@ export const Home = () => {
     <div className={styles.home}>
       <Meta
         title="Software Developer"
-        description="Website portfolio of Muhammad Khoirul Wafa — a Software Developer working on mobile & web
-          apps with a focus on user experience, motion, and accessibility."
+        description="Website portfolio of Muhammad Khoirul Wafa — a Software Developer working on mobile apps with a focus on user experience, motion, and accessibility."
       />
       <Intro
         id="intro"
@@ -96,7 +98,7 @@ export const Home = () => {
         title="Eeman - Quran & Prayer Times"
         description="Islamic app that helps you carry out your daily prayers more easily and regularly."
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/eeman"
         model={{
           type: 'phone',
           alt: 'Eeman - Quran & Prayer Times',
@@ -121,10 +123,10 @@ export const Home = () => {
         title="Modal Rakyat - P2P Lenders' Assets"
         description="Peer-to-Peer Lending (P2P Lending) fintech company in Indonesia that connects Lenders (individuals) with MSMEs who need loans to develop their business."
         buttonText="View project"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="/projects/modalrakyat"
         model={{
           type: 'phone',
-          alt: 'App login screen',
+          alt: 'Modal Rakyat screen',
           textures: [
             {
               srcSet: [modalrakyatTexture, modalrakyatTextureLarge],
@@ -142,10 +144,35 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
+        title="Expense Manager Mobile App UI"
+        description="Design and development of UI's for an Expense tracker app built in Flutter"
+        buttonText="View on GitHub"
+        buttonLink="https://github.com/mkhoirulwafa18/expense-manager"
+        model={{
+          type: 'phone',
+          alt: 'App login screen',
+          textures: [
+            {
+              srcSet: [expenseTexture, expenseTextureLarge],
+              placeholder: expenseTexturePlaceholder,
+            },
+            {
+              srcSet: [expenseTexture2, expenseTexture2Large],
+              placeholder: expenseTexture2Placeholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-4"
+        alternate
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
         title="Z-Wallet Mobile App"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View project"
-        buttonLink="https://gamestack.hamishw.com"
+        description="Design and development for an E-money app built in React Native"
+        buttonText="View in GitHub"
+        buttonLink="https://github.com/mkhoirulwafa/zwalletMobile"
         model={{
           type: 'phone',
           alt: 'App login screen',
@@ -157,27 +184,6 @@ export const Home = () => {
             {
               srcSet: [zwalletTexture2, zwalletTexture2Large],
               placeholder: zwalletTexture2Placeholder,
-            },
-          ],
-        }}
-      />
-      <ProjectSummary
-        id="project-4"
-        alternate
-        sectionRef={projectFour}
-        visible={visibleSections.includes(projectFour.current)}
-        index={4}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
-        buttonLink="/projects/slice"
-        model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
-          textures: [
-            {
-              srcSet: [sliceTexture, sliceTextureLarge],
-              placeholder: sliceTexturePlaceholder,
             },
           ],
         }}

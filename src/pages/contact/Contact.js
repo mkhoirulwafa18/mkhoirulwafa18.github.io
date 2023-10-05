@@ -13,6 +13,7 @@ import { Transition } from 'components/Transition';
 import { useFormInput } from 'hooks';
 import { useRef, useState } from 'react';
 import { cssProps, msToNum, numToMs } from 'utils/style';
+import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
 
 export const Contact = () => {
@@ -32,34 +33,37 @@ export const Contact = () => {
 
     try {
       setSending(true);
-
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/message`, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email.value,
-          message: message.value,
-        }),
-      });
-
-      const responseMessage = await response.json();
-
-      const statusError = getStatusError({
-        status: response?.status,
-        errorMessage: responseMessage?.error,
-        fallback: 'There was a problem sending your message',
-      });
-
-      if (statusError) throw new Error(statusError);
-
+      if (
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID &&
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID &&
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID &&
+        email &&
+        message
+      ) {
+        emailjs
+          .send(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+            {
+              email: email.value,
+              message: message.value,
+            },
+            process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+          )
+          .then(
+            result => {
+              console.log(result.text);
+            },
+            error => {
+              console.log(error.text);
+            }
+          );
+      }
       setComplete(true);
       setSending(false);
     } catch (error) {
       setSending(false);
-      setStatusError(error.message);
+      setStatusError(error);
     }
   };
 
@@ -88,6 +92,7 @@ export const Contact = () => {
             />
             <Input
               required
+              id="email"
               className={styles.input}
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay)}
@@ -99,6 +104,7 @@ export const Contact = () => {
             />
             <Input
               required
+              id="message"
               multiline
               className={styles.input}
               data-status={status}
@@ -181,24 +187,24 @@ export const Contact = () => {
   );
 };
 
-function getStatusError({
-  status,
-  errorMessage,
-  fallback = 'There was a problem with your request',
-}) {
-  if (status === 200) return false;
+// function getStatusError({
+//   status,
+//   errorMessage,
+//   fallback = 'There was a problem with your request',
+// }) {
+//   if (status === 200) return false;
 
-  const statuses = {
-    500: 'There was a problem with the server, try again later',
-    404: 'There was a problem connecting to the server. Make sure you are connected to the internet',
-  };
+//   const statuses = {
+//     500: 'There was a problem with the server, try again later',
+//     404: 'There was a problem connecting to the server. Make sure you are connected to the internet',
+//   };
 
-  if (errorMessage) {
-    return errorMessage;
-  }
+//   if (errorMessage) {
+//     return errorMessage;
+//   }
 
-  return statuses[status] || fallback;
-}
+//   return statuses[status] || fallback;
+// }
 
 function getDelay(delayMs, offset = numToMs(0), multiplier = 1) {
   const numDelay = msToNum(delayMs) * multiplier;

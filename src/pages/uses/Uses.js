@@ -22,7 +22,7 @@ export const Uses = () => {
   return (
     <Fragment>
       <Meta
-        title="Uses"
+        title="My Setup"
         description="A list of hardware and software I use to do my thing"
       />
       <ProjectContainer className={styles.uses}>
@@ -32,38 +32,10 @@ export const Uses = () => {
           opacity={0.7}
         />
         <ProjectHeader
-          title="Uses"
-          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is a Johnny Mnemonic GIF in the background."
+          title="My Setup"
+          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to Code and design things. And yeah, that is a Johnny Mnemonic GIF in the background."
         />
-        <ProjectSection padding="none" className={styles.section}>
-          <ProjectSectionContent>
-            <ProjectTextRow width="m">
-              <ProjectSectionHeading>Design</ProjectSectionHeading>
-              <ProjectSectionText as="div">
-                <List>
-                  <ListItem>
-                    <Link href="https://www.figma.com">Figma</Link> is my primary tool for
-                    UI design these days. Made the switch from Sketch in 2020 and haven’t
-                    looked back. I’ve also created{' '}
-                    <Link href="https://www.figma.com/@hamish">a few plugins</Link> that
-                    you can install.
-                  </ListItem>
-                  <ListItem>
-                    Any motion graphics I create are created in Adobe After Effects. So
-                    far I haven’t found a non-Adobe product that’s as good. If anyone has
-                    suggestions please <Link href="/contact">message me</Link>.
-                  </ListItem>
-                  <ListItem>
-                    For any 3D models I use{' '}
-                    <Link href="https://www.blender.org/">Blender</Link>. Since 2.8 it’s
-                    become way simpler to use and in a lot of ways better than expensive
-                    paid tools like 3DS Max or Maya.
-                  </ListItem>
-                </List>
-              </ProjectSectionText>
-            </ProjectTextRow>
-          </ProjectSectionContent>
-        </ProjectSection>
+
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
@@ -73,40 +45,68 @@ export const Uses = () => {
                   <ListItem>
                     I use{' '}
                     <Link href="https://code.visualstudio.com/">Visual Studio Code</Link>{' '}
-                    as my text editor, with the Atom One Dark theme and Operator Mono as
+                    as my text editor, with the One Dark Pro Darker theme and Fira Code as
                     my typeface of choice.
                   </ListItem>
                   <ListItem>
-                    Firefox is my main browser for both development and general use.
+                    Microsoft Edge is my main browser for both development and general
+                    use.
                   </ListItem>
                   <ListItem>
-                    <Link href="https://reactjs.org/">React</Link> is my front end
-                    Javascript library of choice. The component-centric mental model is
-                    the first thing that truly made sense to me as a designer.
+                    <Link href="https://flutter.dev/">Flutter</Link> is my cross platform
+                    mobile framework of choice. The cross-platform capabilities, efficient
+                    development process, and robust UI toolkit make it an exciting choice
+                    for modern app development.
                   </ListItem>
                   <ListItem>
-                    For 3D effects and image shaders I use{' '}
-                    <Link href="https://threejs.org/">three.js</Link>. It has a bit of a
-                    learning curve but you can do some really powerful stuff with it.
+                    I&apos;m Using{' '}
+                    <Link href="https://github.com/mkhoirulwafa18/">GitHub</Link> as my
+                    main version control system, because GitHub streamlines collaboration
+                    and offers efficient code management and integration, making it an
+                    ideal version control choice.
                   </ListItem>
                   <ListItem>
-                    For CSS I’ve used a myriad pre-processors and css-in-js solutions like
-                    styled-components, but these days I’m using vanilla CSS with{' '}
-                    <Link href="https://postcss.org/">PostCSS</Link> to get upcoming CSS
-                    features today.
+                    For Flutter animations I use{' '}
+                    <Link href="https://pub.dev/packages/animations/">animations</Link>{' '}
+                    package, it’s a great way to add my own animation sequences, but when
+                    i need to work faster, i usually use{' '}
+                    <Link href="https://pub.dev/packages/flutter_animate/">
+                      flutter_animate
+                    </Link>{' '}
+                    package instead.
                   </ListItem>
                   <ListItem>
-                    For Javascript animations I use{' '}
-                    <Link href="https://www.framer.com/motion/">Framer Motion</Link>, it’s
-                    a great way to add spring animations to React and three.js.
+                    For unit & UI components testing in Flutter, I usually use{' '}
+                    <Link href="https://pub.dev/packages/mocktail/">Mocktail</Link>. Just
+                    because mocktail is so simple and mocks in Dart (with null-safety)
+                    without the need for manual mocks or code generation.
+                  </ListItem>
+                </List>
+              </ProjectSectionText>
+            </ProjectTextRow>
+          </ProjectSectionContent>
+        </ProjectSection>
+        <ProjectSection padding="none" className={styles.section}>
+          <ProjectSectionContent>
+            <ProjectTextRow width="m">
+              <ProjectSectionHeading>Design</ProjectSectionHeading>
+              <ProjectSectionText as="div">
+                <List>
+                  <ListItem>
+                    <Link href="https://www.figma.com">Figma</Link> is my primary tool for
+                    UI design these days. The Figma Community is really cool to explore.
                   </ListItem>
                   <ListItem>
-                    For building and testing UI components in isolation I use{' '}
-                    <Link href="https://storybook.js.org/">Storybook</Link>. Check out the{' '}
-                    <Link href="https://storybook.hamishw.com">
-                      storybook for this website
-                    </Link>
-                    .
+                    Any graphics such as icon, ilustration, etc. I create are created in
+                    Adobe Photoshop. So far I haven’t found a non-Adobe product that’s as
+                    good. If anyone has suggestions please{' '}
+                    <Link href="/contact">message me</Link>.
+                  </ListItem>
+                  <ListItem>
+                    For any 3D models I use{' '}
+                    <Link href="https://www.blender.org/">Blender</Link>. Since I’m
+                    currently learning to 3D modelling, i like how easy Blender is and
+                    there is a bunch of tutorial out there to help.
                   </ListItem>
                 </List>
               </ProjectSectionText>
@@ -121,44 +121,44 @@ export const Uses = () => {
                 <TableBody>
                   <TableRow>
                     <TableHeadCell>CPU</TableHeadCell>
-                    <TableCell>AMD Ryzen 5800x</TableCell>
+                    <TableCell>AMD Ryzen 5 3400G</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>GPU</TableHeadCell>
-                    <TableCell>MSI Gaming X Trio RTX 3080</TableCell>
+                    <TableCell>AsRock AMD Radeon RX6600</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Memory</TableHeadCell>
-                    <TableCell>GSkill 32GB DDR4 3600mhz CAS 18</TableCell>
+                    <TableCell>PNY DDR4 XLR8 16GB (2x8GB) 3200Mhz KIT</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Motherboard</TableHeadCell>
-                    <TableCell>MSI B550 Tomahawk</TableCell>
+                    <TableCell>AsRock B450M Steel Legend</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Monitor</TableHeadCell>
-                    <TableCell>1440p IPS 144hz LG 27GL850</TableCell>
+                    <TableCell>1080p ViewSonic VX2481-MH 75hz</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Keyboard</TableHeadCell>
-                    <TableCell>Logitech MX Keys</TableCell>
+                    <TableCell>Rexus Daxa M82X Ultimate</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableHeadCell>Mouse</TableHeadCell>
-                    <TableCell>Logitech G403</TableCell>
+                    <TableCell>Logitech G102</TableCell>
                   </TableRow>
-                  <TableRow>
+                  {/* <TableRow>
                     <TableHeadCell>Laptop</TableHeadCell>
                     <TableCell>Macbook Pro 14″ (2022 M1 Max)</TableCell>
-                  </TableRow>
+                  </TableRow> */}
                   <TableRow>
                     <TableHeadCell>Headphones</TableHeadCell>
-                    <TableCell>Audio Technica ATH-M50x/Apple Airpods</TableCell>
+                    <TableCell>Cooler Master MH630</TableCell>
                   </TableRow>
-                  <TableRow>
+                  {/* <TableRow>
                     <TableHeadCell>Microphone</TableHeadCell>
                     <TableCell>Blue Yeti</TableCell>
-                  </TableRow>
+                  </TableRow> */}
                 </TableBody>
               </Table>
             </ProjectTextRow>
