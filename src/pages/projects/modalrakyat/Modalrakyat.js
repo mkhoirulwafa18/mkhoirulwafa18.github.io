@@ -1,15 +1,6 @@
 import backgroundSprLarge from 'assets/spr-background-large.jpg';
 import backgroundSprPlaceholder from 'assets/spr-background-placeholder.jpg';
-import imageEemanFeatureBgLarge from 'assets/eeman-background-features.jpg';
-import imageEemanFeatureBgPlaceholder from 'assets/eeman-background-features.jpg';
-import imageEemanFeatureBg from 'assets/eeman-background-features.jpg';
 import backgroundSpr from 'assets/spr-background.jpg';
-import initialDesignDarkLarge from 'assets/apps/figma-initial.PNG';
-import initialDesignDarkPlaceholder from 'assets/apps/figma-initial.PNG';
-import initialDesignDark from 'assets/apps/figma-initial.PNG';
-import initialDesignLightLarge from 'assets/apps/figma-initial.PNG';
-import initialDesignLightPlaceholder from 'assets/apps/figma-initial.PNG';
-import initialDesignLight from 'assets/apps/figma-initial.PNG';
 import imageModalrakyat from 'assets/apps/modalrakyat-show.png';
 import modalrakyatSlide1Large from 'assets/apps/modalrakyat/mr1.jpg';
 import modalrakyatSlide1 from 'assets/apps/modalrakyat/mr1.jpg';
@@ -28,16 +19,13 @@ import modalrakyatSlide7 from 'assets/apps/modalrakyat/mr7.jpg';
 import { Footer } from 'components/Footer';
 import { Image } from 'components/Image';
 import { Meta } from 'components/Meta';
-import { SegmentedControl, SegmentedControlOption } from 'components/SegmentedControl';
 import { ThemeProvider, useTheme } from 'components/ThemeProvider';
-import { useAppContext } from 'hooks';
 import {
   ProjectBackground,
   ProjectContainer,
   ProjectHeader,
   ProjectImage,
   ProjectSection,
-  ProjectSectionColumns,
   ProjectSectionContent,
   ProjectSectionHeading,
   ProjectSectionText,
