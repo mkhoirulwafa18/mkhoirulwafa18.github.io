@@ -1,8 +1,8 @@
 # Personal portfolio
 
-[![Site preview](/public/site-preview.png)](https://hamishw.com)
+[![Site preview](/public/site-preview.png)](https://mkhoirulwafa18.github.io)
 
-My design portfolio to showcase a few projects. Built with [Next.js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View the [live site](https://hamishw.com) or check out a live version of the [components storybook](https://storybook.hamishw.com).
+My design portfolio to showcase a few projects. Built with [Next.js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/) by [HamishMW](https://github.com/HamishMW) and has been modified by me to showcase my own project. View the [live site](https://mkhoirulwafa18.github.io) or check out [HamishMW version here](https://storybook.mkhoirulwafa18.github.io).
 
 ## Install & run
 
