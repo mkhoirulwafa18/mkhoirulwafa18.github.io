@@ -121,7 +121,7 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                   secondary
                   className={styles.button}
                   data-visible={visible}
-                  href="https://drive.google.com/file/d/17Ah9ZoEz15TINhVEDmIGrZQmnLc4rdDD/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1iL5SFRGagaYzj53bilNy2tzsvl-Matnj/view?usp=sharing"
                   icon="send"
                 >
                   Get My CV
